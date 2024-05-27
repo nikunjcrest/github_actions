@@ -39,7 +39,7 @@ jobs:
       - name: Echo2
         run: echo "END...!!!"
         
-    #   - name: Hit The Port 2
-    #     run: curl -I http://localhost:8000      
+      - name: Hit The Port 2
+        run: curl -I http://localhost:8000      
 
 
