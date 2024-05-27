@@ -1,0 +1,25 @@
+name: Splunk Installation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download_and_instalation:
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Echo
+        run: echo "Hello Nikkaa...!"
+
+      - name: Goto ./opt/
+        run: cd ./opt
+
+      - name: Download Splunk
+        run: wget -O splunk-9.2.0-1fff88043d5f-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.0/linux/splunk-9.2.0-1fff88043d5f-linux-2.6-amd64.deb"
+
+      - name: Extract Tar
+        run: tar -xvzf splunk-9.2.0-1fff88043d5f-linux-2.6-amd64.deb
