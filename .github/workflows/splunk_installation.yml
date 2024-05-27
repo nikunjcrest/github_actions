@@ -15,17 +15,23 @@ jobs:
       - name: Echo
         run: echo "Hello Nikkaa...!"
 
-      - name: ls1
-        run: ls -al
-
       - name: Goto /opt
         run: cd /opt
-      
-      - name: ls2
-        run: ls -al
 
       - name: Download Splunk
-        run: wget -O splunk-9.2.0-1fff88043d5f-linux-2.6-amd64.deb "https://download.splunk.com/products/splunk/releases/9.2.0/linux/splunk-9.2.0-1fff88043d5f-linux-2.6-amd64.deb"
+        run: wget -O splunk-9.2.0-1fff88043d5f-Linux-x86_64.tgz "https://download.splunk.com/products/splunk/releases/9.2.0/linux/splunk-9.2.0-1fff88043d5f-Linux-x86_64.tgz"
 
       - name: Extract Tar
-        run: tar -xvzf splunk-9.2.0-1fff88043d5f-linux-2.6-amd64.deb
+        run: tar -xvzf splunk-9.2.0-1fff88043d5f-Linux-x86_64.tgz
+    
+      - name: Start Splunk
+        run: ./splunk/bin/splunk start --accept-license --answer-yes --no-prompt --seed-passwd "Crest@12345"
+      
+      - name: Check Splunk Status
+        run: ./splunk/bin/splunk status
+      
+      - name: Stop Splunk
+        run: ./splunk/bin/splunk stop
+      
+      - name: Check Splunk Status
+        run: ./splunk/bin/splunk status
