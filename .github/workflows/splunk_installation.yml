@@ -27,7 +27,7 @@ jobs:
       - name: Start Splunk
         run: ./splunk/bin/splunk start --accept-license --answer-yes --no-prompt --seed-passwd "Crest@12345"
       
-      - name: Check Splunk Status 1
+      - name: Check Splunk Status
         run: ./splunk/bin/splunk status
 
       - name: Hit The Port 1
@@ -35,9 +35,8 @@ jobs:
       
       - name: Stop Splunk
         run: ./splunk/bin/splunk stop
-      
-      - name: Check Splunk Status 2
-        run: ./splunk/bin/splunk status
-
+        
       - name: Hit The Port 2
-        run: curl -I http://localhost:8000
+        run: curl -I http://localhost:8000      
+
+
