@@ -36,7 +36,7 @@ jobs:
       - name: Stop Splunk
         run: ./splunk/bin/splunk stop
         
-      - name: Hit The Port 2
-        run: curl -I http://localhost:8000      
+    #   - name: Hit The Port 2
+    #     run: curl -I http://localhost:8000      
 
 
