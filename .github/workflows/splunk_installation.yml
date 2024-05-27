@@ -15,6 +15,9 @@ jobs:
       - name: Echo
         run: echo "Hello Nikkaa...!"
 
+      - name: Echo1
+        run: ls -al
+
       - name: Goto ./opt/
         run: cd ./opt
 
