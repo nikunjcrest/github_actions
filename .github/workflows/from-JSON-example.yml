@@ -17,6 +17,7 @@ jobs:
       matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
     steps:
         - run: echo "Matrix - ${{ fromJSON(needs.job1.outputs.matrix) }}"
+        - run: echo "Matrix - ${{ toJson(fromJSON(needs.job1.outputs.matrix)) }}"
         - run: echo "Matrix - ${{ matrix }}"
         - run: echo "Matrix - ${{ matrix.* }}"
         - run: echo "Matrix - ${{ toJson(matrix) }}"
