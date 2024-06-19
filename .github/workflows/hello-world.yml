@@ -20,5 +20,5 @@ jobs:
           myString: Mona the Octocat
           myStringInBraces: ${{ 'It''s open source!' }}
       - name: Echo env vars
-        run: echo $myNull, $myBoolean, $myIntegerNumber, $myFloatNumber, $myHexNumber, $myExponentialNumber, $myString, $myStringInBraces,
+        run: echo $myNull, $myBoolean, $myIntegerNumber, $myFloatNumber, $myHexNumber, $myExponentialNumber, $myString, ${{ myStringInBraces }}
       
