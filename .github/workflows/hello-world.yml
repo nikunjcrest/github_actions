@@ -21,8 +21,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Echo env vars
         run: echo myNull:- $myNull $'\n'myBoolean:- $myBoolean $'\n'myIntegerNumber:- $myIntegerNumber $'\n'myFloatNumber:- $myFloatNumber $'\n'myHexNumber:- $myHexNumber $'\n'myExponentialNumber:- $myExponentialNumber $'\n'myString:- $myString $'\n'myStringInBraces:- $myStringInBraces
-      run: echo ${{ env.continue }}
-      run: echo ${{ env.time }}
-      run: echo ${{ fromJSON(env.continue) }}
-      run: echo ${{ fromJSON(env.time) }}
+      - name: Echo env vars continue
+        run: echo ${{ env.continue }}
+      - name: Echo env vars time
+        run: echo ${{ env.time }}
+      - name: Echo env vars continue fromJSON
+        run: echo ${{ fromJSON(env.continue) }}
+      - name: Echo env vars time fromJSON
+        run: echo ${{ fromJSON(env.time) }}
       
