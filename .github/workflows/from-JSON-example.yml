@@ -19,8 +19,7 @@ jobs:
         - run: echo "Matrix - ${{ fromJSON(needs.job1.outputs.matrix) }}"
         - run: echo "Matrix - ${{ matrix }}"
         - run: echo "Matrix - ${{ matrix.* }}"
-        - run: echo "Matrix - ${{ fromJson(matrix) }}"
-        - run: echo "Matrix - ${{ fromJson(matrix) }}"
+        - run: echo "Matrix - ${{ toJson(matrix) }}"
         - run: echo "Matrix - Project ${{ matrix.project }}, Config ${{ matrix.config }}"
       
 
