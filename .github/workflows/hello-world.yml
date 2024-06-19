@@ -20,5 +20,13 @@ jobs:
           myString: Mona the Octocat
           myStringInBraces: ${{ 'It''s open source!' }}
       - name: Echo env vars
-        run: echo ${{ fromJSON(env.myNull) }}, ${{ fromJSON(env.myBoolean) }}, ${{ fromJSON(env.myIntegerNumber) }}, ${{ fromJSON(env.myFloatNumber) }}, ${{ fromJSON(env.myHexNumber) }}, ${{ fromJSON(env.myExponentialNumber) }}, ${{ fromJSON(env.myString) }}, ${{ fromJSON(env.myStringInBraces) }},
+        run:
+          echo ${{ env.myNull }}
+          echo ${{ env.myBoolean }}
+          echo ${{ env.myIntegerNumber }}
+          echo ${{ env.myFloatNumber }}
+          echo ${{ env.myHexNumber }}
+          echo ${{ env.myExponentialNumber }}
+          echo ${{ env.myString }}
+          echo ${{ env.myStringInBraces }}
       
