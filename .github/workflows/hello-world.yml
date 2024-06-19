@@ -1,14 +1,22 @@
 name: hello-world
 run-name: Hello Nikka
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   my_first_job:
     runs-on: ubuntu-latest
     steps:
-      # This step checks out a copy of your repository.
       - name: My first step - check out repository
         uses: actions/checkout@v4
-      # This step references the directory that contains the action.
-      - name: Use local hello-world-action
-        uses: ./.github/actions/hello-world-action
+      - name: Set env vars 
+        run: echo 'Hello Nikka...!'
+        env:
+          myNull: ${{ null }}
+          myBoolean: ${{ false }}
+          myIntegerNumber: ${{ 711 }}
+          myFloatNumber: ${{ -9.2 }}
+          myHexNumber: ${{ 0xff }}
+          myExponentialNumber: ${{ -2.99e-2 }}
+          myString: Mona the Octocat
+          myStringInBraces: ${{ 'It''s open source!' }}
+      
