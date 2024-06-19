@@ -5,21 +5,30 @@ on: [push, workflow_dispatch]
 jobs:
   my_first_job:
     runs-on: ubuntu-latest
+    env:
+      myNull: null
+      myBoolean: false
+      myIntegerNumber: 711
+      myFloatNumber: -9.2
+      myHexNumber: 0xff
+      myExponentialNumber: -2.99e-2
+      myString: Mona the Octocat
+      myStringInBraces: 'It''s open source!'
     steps:
       - name: My first step - check out repository
         uses: actions/checkout@v4
-      - name: Set env vars 
-        # run: echo 'Hello Nikka...!'
-        env:
-          myNull: null
-          myBoolean: false
-          myIntegerNumber: 711
-          myFloatNumber: -9.2
-          myHexNumber: 0xff
-          myExponentialNumber: -2.99e-2
-          myString: Mona the Octocat
-          myStringInBraces: 'It''s open source!'
-        run: echo myString:- $myString $'\n' myStringInBraces:- $myStringInBraces
+      # - name: Set env vars 
+      #   # run: echo 'Hello Nikka...!'
+      #   env:
+      #     myNull: null
+      #     myBoolean: false
+      #     myIntegerNumber: 711
+      #     myFloatNumber: -9.2
+      #     myHexNumber: 0xff
+      #     myExponentialNumber: -2.99e-2
+      #     myString: Mona the Octocat
+      #     myStringInBraces: 'It''s open source!'
+      #   run: echo myString:- $myString $'\n'myStringInBraces:- $myStringInBraces
       - name: Echo env vars
-        run: echo myNull:- $myNull $'\n' myBoolean:- $myBoolean $'\n' myIntegerNumber:- $myIntegerNumber $'\n' myFloatNumber:- $myFloatNumber $'\n' myHexNumber:- $myHexNumber $'\n' myExponentialNumber:- $myExponentialNumber $'\n' myString:- $myString $'\n' myStringInBraces:- $myStringInBraces
+        run: echo myNull:- $myNull $'\n'myBoolean:- $myBoolean $'\n'myIntegerNumber:- $myIntegerNumber $'\n'myFloatNumber:- $myFloatNumber $'\n'myHexNumber:- $myHexNumber $'\n'myExponentialNumber:- $myExponentialNumber $'\n'myString:- $myString $'\n'myStringInBraces:- $myStringInBraces
       
