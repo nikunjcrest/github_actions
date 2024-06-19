@@ -1,8 +1,8 @@
 name: Build and deploy
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 
 jobs:
-  build:
+  build:    
     runs-on: ubuntu-latest
     outputs:
       build_id: ${{ steps.build_step.outputs.build_id }}
