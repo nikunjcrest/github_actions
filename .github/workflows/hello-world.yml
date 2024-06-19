@@ -8,25 +8,17 @@ jobs:
     steps:
       - name: My first step - check out repository
         uses: actions/checkout@v4
-      - name: Set env vars 
+      - name: Set env vars
         run: echo 'Hello Nikka...!'
         env:
-          myNull: ${{ null }}
-          myBoolean: ${{ false }}
-          myIntegerNumber: ${{ 711 }}
-          myFloatNumber: ${{ -9.2 }}
-          myHexNumber: ${{ 0xff }}
-          myExponentialNumber: ${{ -2.99e-2 }}
+          myNull: null
+          myBoolean: false
+          myIntegerNumber: 711
+          myFloatNumber: -9.2
+          myHexNumber: 0xff
+          myExponentialNumber: -2.99e-2
           myString: Mona the Octocat
-          myStringInBraces: ${{ 'It''s open source!' }}
+          myStringInBraces: 'It''s open source!'
       - name: Echo env vars
-        run:
-          echo ${{ env.myNull }},
-          echo ${{ env.myBoolean }},
-          echo ${{ env.myIntegerNumber }},
-          echo ${{ env.myFloatNumber }},
-          echo ${{ env.myHexNumber }},
-          echo ${{ env.myExponentialNumber }},
-          echo ${{ env.myString }},
-          echo ${{ env.myStringInBraces }},
+        run: echo myNull, myBoolean, myIntegerNumber, myFloatNumber, myHexNumber, myExponentialNumber, myString, myStringInBraces
       
