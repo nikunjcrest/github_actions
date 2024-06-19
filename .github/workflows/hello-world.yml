@@ -21,12 +21,12 @@ jobs:
           myStringInBraces: ${{ 'It''s open source!' }}
       - name: Echo env vars
         run:
-          echo ${{ env.myNull }}
-          echo ${{ env.myBoolean }}
-          echo ${{ env.myIntegerNumber }}
-          echo ${{ env.myFloatNumber }}
-          echo ${{ env.myHexNumber }}
-          echo ${{ env.myExponentialNumber }}
-          echo ${{ env.myString }}
-          echo ${{ env.myStringInBraces }}
+          echo ${{ env.myNull }},
+          echo ${{ env.myBoolean }},
+          echo ${{ env.myIntegerNumber }},
+          echo ${{ env.myFloatNumber }},
+          echo ${{ env.myHexNumber }},
+          echo ${{ env.myExponentialNumber }},
+          echo ${{ env.myString }},
+          echo ${{ env.myStringInBraces }},
       
