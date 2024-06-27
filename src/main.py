@@ -6,7 +6,7 @@ from loguru import logger
 from src.database import init_db
 from src.users.routes import router as user_routers
 
-app = FastAPI(title="Fastapi on Heroku")
+app = FastAPI(title="Fastapi-Mongo-Beanie")
 
 @app.on_event("startup")
 async def start_db():
