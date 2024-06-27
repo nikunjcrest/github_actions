@@ -4,7 +4,7 @@ COPY  ./requirements.txt ./requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
-COPY ./.env ./start.sh ./
+COPY ./start.sh ./start.sh
 
 COPY ./src ./src
 
