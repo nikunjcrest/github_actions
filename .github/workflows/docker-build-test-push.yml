@@ -68,6 +68,7 @@ jobs:
           path: src/
 
   docker:
+    needs: security_checks
     runs-on: ubuntu-latest
     steps:
       -
