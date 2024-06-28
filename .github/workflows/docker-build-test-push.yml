@@ -55,3 +55,14 @@ jobs:
       with:
         name: pytest-coverage-report
         path: reports/pytest/
+  
+  security_checks:
+    needs: pytest
+    runs-on: ubuntu-latest
+    name: Security check
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run PyCharm Security
+        uses: tonybaloney/pycharm-security@master
+        with:
+          path: app/
