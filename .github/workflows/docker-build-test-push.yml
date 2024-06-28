@@ -65,4 +65,4 @@ jobs:
       - name: Run PyCharm Security
         uses: tonybaloney/pycharm-security@master
         with:
-          path: app/
+          path: src/
