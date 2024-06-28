@@ -1,35 +1,32 @@
+from typing import Optional
+
 from fastapi import FastAPI
 from pydantic import BaseModel
-from starlette.responses import RedirectResponse
-from loguru import logger
 
-from src.database import init_db
-from src.users.routes import router as user_routers
+app = FastAPI()
 
-app = FastAPI(title="Fastapi-Mongo-Beanie")
 
-@app.on_event("startup")
-async def start_db():
-    await init_db()
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offer: Optional[bool] = None
 
 
 @app.get("/")
-async def read_root():
-    return RedirectResponse(url='/docs#')
+def read_root():
+    return {"Hola": "Mundo"}
 
 
-class IndexResponse(BaseModel):
-    message: str
+@app.get("/health")
+def health_check():
+    return {"detail": "ok"}
 
 
-@app.get("/index", response_model=IndexResponse)
-async def index():
-    logger.debug("[debug] Index is calling...!")
-    logger.info("[info] Index is calling...!")
-    logger.success("[success] Index is calling...!")
-    logger.warning("[warning] Index is calling...!")
-    logger.error("[error] Index is calling...!")
-    logger.critical("[critical] Index is calling...!")
-    return {"message": "Hello Nikka...!"}
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Optional[str] = None):
+    return {"item_id": item_id, "q": q}
 
-app.include_router(user_routers)
+
+@app.put("/items/{item_id}")
+def update_item(item_id: int, item: Item):
+    return {"item_name": item.name, "item_id": item_id}
